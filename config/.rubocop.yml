@@ -4,5 +4,6 @@ AllCops:
     - Gemfile
     - Rakefile
 
+AllCops:
   Style/FrozenStringLiteralComment:
     Enabled: false
