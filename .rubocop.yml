@@ -1,11 +1,11 @@
 AllCops:
   Exclude:
-    - "Gemfile"
-    - "Rakefile"
-    - "db/schema.rb"
-    - "spec/rails_helper"
-    - "spec/spec_helper"
-    - "db/migrate/**"
+    - Gemfile
+    - Rakefile
+    - db/schema.rb
+    - spec/rails_helper
+    - spec/spec_helper
+    - db/migrate/**
 
   UseCache: false
 Style/CollectionMethods:
