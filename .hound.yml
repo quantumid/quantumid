@@ -1,6 +1,6 @@
-AllCops:
-  Exclude:
-    - db/schema.rb
+ruby:
+  enabled: true
+  config_file: config/rubocop.yml
 
-  Style/FrozenStringLiteralComment:
-    Enabled: false
+coffee_script:
+  enabled: false
