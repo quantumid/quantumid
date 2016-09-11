@@ -10,15 +10,17 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 
-
 group :development, :test do
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'rails-controller-testing'
 end
 
 group :test do
   gem 'coveralls', require: false
+  gem 'database_cleaner'
 end
 
 group :development do
