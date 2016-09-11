@@ -10,8 +10,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 
-
 group :development, :test do
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
