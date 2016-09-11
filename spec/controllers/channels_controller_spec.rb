@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe ChannelsController, type: :controller do
   describe 'GET index' do
+    let!(:channel) { create(:channel) }
+    let!(:video) { create(:video, channel: channel) }
+
     it 'renders the index template' do
       get :index
 
@@ -9,16 +12,13 @@ RSpec.describe ChannelsController, type: :controller do
     end
 
     it 'returns all channels' do
-      channel_one = create(:channel)
-      channel_two = create(:channel)
+      channel_two = create(:channel, name: "Disney Channel")
       get :index
 
-      expect(assigns(:channels)).to eq([channel_two, channel_one])
+      expect(assigns(:all_channels)).to eq([channel, channel_two])
     end
 
     it 'returns the first video to be shown' do
-      channel = create(:channel)
-      video = create(:video)
       video.channel = channel
       get :index
 
