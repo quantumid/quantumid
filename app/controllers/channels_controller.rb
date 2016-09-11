@@ -1,5 +1,4 @@
 class ChannelsController < ApplicationController
-
   def index
     @all_channels = Channel.all
     @initial_video = nil
@@ -8,7 +7,5 @@ class ChannelsController < ApplicationController
     if first_channel
       @initial_video = first_channel.videos.first.vimeo_id
     end
-    
   end
-
 end

@@ -25,5 +25,4 @@ RSpec.describe ChannelsController, type: :controller do
       expect(assigns(:initial_video)).to eq(video.vimeo_id)
     end
   end
-
 end
