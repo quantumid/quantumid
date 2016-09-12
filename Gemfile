@@ -9,7 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
-gem 'vimeo'
+gem 'jquery-oembed-rails'
 
 group :development, :test do
   gem 'pry-rails'
@@ -17,9 +17,11 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'rails-controller-testing'
+  gem 'capybara-webkit'
 end
 
 group :test do
+  gem 'launchy'
   gem 'coveralls', require: false
   gem 'database_cleaner'
 end
