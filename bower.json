@@ -1,0 +1,13 @@
+{
+  "name": "quantumid",
+  "homepage": "quantumid.herokuapp.com",
+  "authors": [
+    "Michael Obremski <mobremski@gmail.com>",
+    "Jimmy Ranger <jimmy.b.ranger@gmail.com>",
+    "Kristin Ruben <kruben@gmail.com>"
+  ],
+  "description": "A Grey Matter Project",
+  "main": "",
+  "license": "MIT",
+  "private": true
+}
