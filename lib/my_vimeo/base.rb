@@ -3,6 +3,7 @@ module MyVimeo
     attr_reader :id
     include HTTParty
     base_uri 'https://api.vimeo.com'
+    #this will need to be changed to pull create a new vimeo token with each session!
     headers "Authorization" => "Bearer #{ENV['VIMEO_TOKEN']}"
 
     def initialize(id)
