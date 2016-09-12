@@ -11,5 +11,5 @@ function ready(fn) {
 }
 
 function beginPlayer() {
-  ready(player)
+  ready(player);
 }
