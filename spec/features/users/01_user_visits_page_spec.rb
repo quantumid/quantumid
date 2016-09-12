@@ -6,9 +6,9 @@ feature 'video on home page', %(
 ) do
   context 'before signing in' do
     scenario 'user visits page' do
+      expect(:page).to have_content('QUANTUMi.d.')
       pending
       expect(:page).to have_css('video')
-      expect(:page).to have_content('QUANTUMi.d.')
     end
     scenario 'user can sign in through facebook' do
       pending
