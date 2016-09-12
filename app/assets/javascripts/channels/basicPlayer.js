@@ -1,5 +1,5 @@
 function player() {
-  new Vimeo.Player('embed', options);
+  new Vimeo.Player('embed');
 }
 
 function ready(fn) {
@@ -10,10 +10,6 @@ function ready(fn) {
   }
 }
 
-function beginPlayer(videoId) {
-  options = {
-    id: videoId,
-    width: 640
-  }
+function beginPlayer() {
   ready(player)
 }
