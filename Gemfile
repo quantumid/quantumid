@@ -9,7 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
-gem 'oembed'
+gem 'httparty'
 
 group :development, :test do
   gem 'pry-rails'
