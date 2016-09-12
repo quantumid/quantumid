@@ -1,0 +1,2 @@
+module MyVimeo
+end
