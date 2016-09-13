@@ -4,6 +4,7 @@ module MyVimeo
       'channels'
     end
 
+    protected
     def persist
       c = Channel.new
       c.vimeo_id = id
