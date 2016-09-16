@@ -11,6 +11,6 @@ if Channel.where(name: 'Super Fun Sample Test Channel').blank?
 end
 
 if Video.where(title: 'Nickelodeon\'s Doug (opening credits)').blank?
-  cid = Channel.where(vimeo_id: 1129301).first.id
+  cid = Channel.where(vimeo_id: 112_930_1).first.id
   Video.create!(vimeo_id: 150_707_411, title: 'Nickelodeon\'s Doug (opening credits)', channel_id: cid)
 end
