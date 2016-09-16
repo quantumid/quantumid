@@ -7,7 +7,10 @@ module MyVimeo
       self.response['access_token']
     end
 
+    #this will need to be changed once we establish sessions because class methods cannot be private!
+
     private
+
     def self.response
       self.post('/client', headers: self.header, body: self.body)
     end
@@ -24,5 +27,6 @@ module MyVimeo
       secret = "#{ENV['VIMEO_CLIENT_ID']}:#{ENV['VIMEO_CLIENT_SECRETS']}"
       Base64.encode64(secret).tr("\n", '')
     end
+
   end
 end
