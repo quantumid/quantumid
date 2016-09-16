@@ -4,14 +4,11 @@ module MyVimeo
       'channels'
     end
 
-    protected
-    def persist
-      c = Channel.new
-      c.vimeo_id = id
-      c.description = description
-      c.name = name
-      c.save
+    def model_type
+      ActiveRecord::Channel
     end
+
+    protected
 
     def video_count
       videos['data'].length

@@ -11,6 +11,11 @@ module MyVimeo
       @description = description
     end
 
+    def persisted?
+      result = model_type.where(vimeo_id: @id).blank?
+      !result
+    end
+
     protected
     def name
       full['name']
