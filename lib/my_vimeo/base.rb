@@ -25,7 +25,7 @@ module MyVimeo
     end
 
     def new_token
-      MyVimeo::API.token
+      MyVimeo::Session.token
     end
 
     def path

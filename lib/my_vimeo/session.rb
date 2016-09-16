@@ -1,5 +1,5 @@
 module MyVimeo
-  class API
+  class Session
     include HTTParty
     base_uri 'https://api.vimeo.com/oauth/authorize'
 
