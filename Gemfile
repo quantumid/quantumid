@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 gem 'httparty'
 gem 'redis', '~> 3.0'
+gem 'devise'
 
 group :development, :test do
   gem 'pry-rails'
