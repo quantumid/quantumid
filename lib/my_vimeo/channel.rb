@@ -8,8 +8,6 @@ module MyVimeo
       ActiveRecord::Channel
     end
 
-    protected
-
     def video_count
       videos['data'].length
     end
