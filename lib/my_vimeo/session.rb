@@ -4,7 +4,7 @@ module MyVimeo
     base_uri 'https://api.vimeo.com/oauth/authorize'
 
     def self.token
-      self.response['access_token']
+      response['access_token']
     end
 
     #this will need to be changed once we establish sessions because class methods cannot be private!
@@ -16,11 +16,11 @@ module MyVimeo
     end
 
     def self.body
-      {'grant_type' => 'client_credentials'}
+      { 'grant_type' => 'client_credentials' }
     end
 
     def self.header
-      { "Authorization" => "basic #{secret_code}" }
+      { 'Authorization' => "basic #{secret_code}" }
     end
 
     def self.secret_code
