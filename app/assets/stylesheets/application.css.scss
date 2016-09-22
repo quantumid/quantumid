@@ -17,3 +17,14 @@ $font-url: "http://fonts.useso.com/css?family=Lato:400,700,400italic,700italic&s
  *= require_tree .
  *= require_self
  */
+
+
+#hello {
+  z-index: 5;
+  position: absolute;
+}
+
+#embed {
+  z-index: 1;
+  position: absolute;
+}

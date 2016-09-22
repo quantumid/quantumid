@@ -1,6 +1,11 @@
 <h1>QUANTUMi.d.</h1>
-<%= image_tag "tv.svg" %>
-<div id='embed' data-vimeo-autoplay='true' data-vimeo-id=<%= "#{@initial_video_id}" %> ></div>
+
+<div class="combined">
+  <div id='embed' data-vimeo-autoplay='true' data-vimeo-id=<%= "#{@initial_video_id}" %> ></div>
+  <div id="hello">
+    <%= image_tag "tv.svg" %>
+  </div>
+</div>
 
 <%= javascript_tag do %>
   beginPlayer()
