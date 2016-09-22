@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'dotenv-rails'
 gem 'httparty'
+gem 'devise'
 
 group :development, :test do
   gem 'pry-rails'

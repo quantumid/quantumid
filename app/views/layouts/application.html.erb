@@ -14,6 +14,13 @@
 
   <body>
 
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
     <div class="ui fixed menu">
     <div class="ui container">
       <a href="#" class="header item">
