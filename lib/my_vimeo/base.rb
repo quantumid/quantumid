@@ -1,19 +1,22 @@
 module MyVimeo
   class Base
-    attr_reader :id
+    attr_reader :id, :name, :description
     include HTTParty
     base_uri 'https://api.vimeo.com'
-    #this will need to be changed to pull create a new vimeo token with each session!
-    headers "Authorization" => "Bearer #{ENV['VIMEO_TOKEN']}"
 
     def initialize(id)
       @id = id
+      @token = new_token
+      @name = name
+      @description = description
     end
 
-    def path
-      "/#{type}/#{id}"
+    def persisted?
+      result = model_type.where(vimeo_id: @id).blank?
+      !result
     end
 
+    protected
     def name
       full['name']
     end
@@ -22,8 +25,20 @@ module MyVimeo
       full['description']
     end
 
+    def header
+      {"Authorization" => "Bearer #{@token}" }
+    end
+
+    def new_token
+      MyVimeo::Session.token
+    end
+
+    def path
+      "/#{type}/#{id}"
+    end
+
     def full
-      response = self.class.get(path)
+      response = self.class.get(path, headers: header)
       JSON.parse(response)
     end
   end

@@ -3,5 +3,9 @@ module MyVimeo
     def type
       'videos'
     end
+
+    def model_type
+      ActiveRecord::Video
+    end
   end
 end
