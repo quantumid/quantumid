@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def show
-    chat = Chat.find(params[:chat])
+    @chat = Chat.find(params[:id])
     @messages = chat.messages.first(20)
   end
 
@@ -9,8 +9,10 @@ class MessagesController < ApplicationController
   end
 
   def create
-    message = Message.new(new_message_params)
-    message.user = current_user
+    @chat = Chat.find(params[:id])
+    @message = Message.new(new_message_params)
+    @message.user = current_user
+    redirect_to @chat
   end
 
   private
