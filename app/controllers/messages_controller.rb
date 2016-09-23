@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  def index
+  def show
     chat = Chat.find(params[:chat])
     @messages = chat.messages.first(20)
   end
