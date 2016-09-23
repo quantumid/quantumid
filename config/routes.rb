@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   resources :channels, only: [:index, :show] do
     resources :videos, only: [:show]
   end
+
+  resources :chats, only: [:index, :show] do
+    resources :messages, only: [:index, :show, :create]
+  end
+
 end
