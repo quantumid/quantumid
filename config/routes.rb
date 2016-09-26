@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
   root 'channels#index'
   mount ActionCable.server => '/cable'
 
   resources :channels, only: [:index, :show] do
     resources :videos, only: [:show]
   end
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },
+                     :path_names => {:sign_out => 'devise/sessions#destroy'}
+
 end
