@@ -18,7 +18,12 @@ class MessagesController < ApplicationController
     @chat = Chat.find(params[:chat_id])
     @message = Message.new(new_message_params)
     @message.user = current_user
-    redirect_to @chat
+    if @message.save
+      ApplicationCable.server.broadcast 'messages',
+        message: message.content,
+        user: message.user.email
+      head :ok
+    end
   end
 
   private

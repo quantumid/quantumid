@@ -1,6 +1,6 @@
 <%= @chat.name + " | " + @chat.topic %>
-<ul>
+<div class="messages">
 <% @messages.each do |message| %>
-  <li><%= message.content  %></li>
+  <p><%= message.content  %></p>
 <% end %>
-</ul>
+</div>
