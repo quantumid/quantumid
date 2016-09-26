@@ -1,11 +1,7 @@
 <h1>QUANTUMi.d.</h1>
 
-<div class="combined">
-  <div id='embed' data-vimeo-autoplay='true' data-vimeo-id=<%= "#{@initial_video_id}" %> ></div>
-  <div id="hello">
-    <%= image_tag "tv.svg" %>
-  </div>
-</div>
+<iframe id="video" src="http://player.vimeo.com/video/15888399" width="100%" height="100%" wmode="transparent" frameborder="0"></iframe>
+  <%= image_tag "tv-transp.svg", class: "onTop" %>
 
 <%= javascript_tag do %>
   beginPlayer()

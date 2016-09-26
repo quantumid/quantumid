@@ -19,12 +19,16 @@ $font-url: "http://fonts.useso.com/css?family=Lato:400,700,400italic,700italic&s
  */
 
 
-#hello {
-  z-index: 5;
+#video {
   position: absolute;
 }
 
-#embed {
-  z-index: 1;
+.onTop {
   position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#embed {
+  position: relative;
 }
