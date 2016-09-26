@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :videos, only: [:show]
   end
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" },
-                     :path_names => {:sign_out => 'devise/sessions#destroy'}
-
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' },
+                     :path_names => { sign_out: 'devise/sessions#destroy' }
 end
