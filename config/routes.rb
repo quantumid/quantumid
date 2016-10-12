@@ -6,9 +6,7 @@ Rails.application.routes.draw do
     resources :videos, only: [:show]
   end
 
-  resources :chats, only: [:index, :show] do
-    resources :messages, only: [:index, :new, :create]
-  end
+  resources :chats, only: [:index, :show]
 
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' },
                      :path_names => { sign_out: 'devise/sessions#destroy' }
