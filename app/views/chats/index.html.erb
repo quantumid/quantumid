@@ -1,7 +1,7 @@
 <% unless @chats.empty? %>
   <ul>
     <% @chats.each do |c| %>
-      <li><%= link_to c.name, chat_messages_path(c.id) %></li>
+      <li><%= link_to c.name, chat_path(c.id) %></li>
     <% end %>
   </ul>
 <% end %>

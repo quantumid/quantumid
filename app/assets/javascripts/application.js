@@ -15,3 +15,4 @@
 //= require semantic-ui
 //= require_tree .
 //= require vimeo-player-js
+//= require ./channels/chat
