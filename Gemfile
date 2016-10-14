@@ -14,6 +14,7 @@ gem 'dotenv-rails'
 gem 'httparty'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'simple_token_authentication', '~> 1.0'
 
 group :development, :test do
   gem 'pry-rails'
