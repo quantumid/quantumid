@@ -1,7 +1,7 @@
 module MyVimeo
   class Session
     include HTTParty
-    base_uri 'https://api.vimeo.com/oauth/authorize'
+    base_uri 'https://api.vimeo.com/oauth'
 
     def self.token
       response['access_token']
@@ -12,7 +12,7 @@ module MyVimeo
     private
 
     def self.response
-      self.post('/client', headers: self.header, body: self.body)
+      self.post('/authorize/client', headers: self.header, body: self.body)
     end
 
     def self.body
@@ -26,6 +26,7 @@ module MyVimeo
     def self.secret_code
       secret = "#{ENV['VIMEO_CLIENT_ID']}:#{ENV['VIMEO_CLIENT_SECRETS']}"
       Base64.encode64(secret).tr("\n", '')
+
     end
 
   end
