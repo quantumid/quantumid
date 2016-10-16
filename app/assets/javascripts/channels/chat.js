@@ -6,8 +6,8 @@ function subscribe(chatId) {
       return $('#messages').html('');
     },
     received: function(data) {
-      if (data['topic']) {
-        return $('#chat-topic').html(data['topic']);
+      if (data.topic) {
+        return $('#chat-topic').html(data.topic);
       } else {
       return $('#messages').append(format(data));
       }
@@ -19,7 +19,7 @@ function subscribe(chatId) {
       });
     }
   });
-};
+}
 
 $(document).on('keypress', '[data-behavior~=chat_speaker]', function(event) {
   if (event.keyCode === 13) {
@@ -27,13 +27,13 @@ $(document).on('keypress', '[data-behavior~=chat_speaker]', function(event) {
     event.target.value = "";
     return event.preventDefault();
   }
-});
+})
 
 function initialChat() {
   var chatId = document.getElementById('chat-input').getAttribute('data-chat-id');
   subscribe(chatId);
-};
+}
 
 function format(data) {
-  return "<div class='card message'><div class='card-block'><div class='row'><div class='col-md-1'></div><div class='col-md-11'><p class='card-text'><span class='text-muted'>"+data['user']+" says</span><br>"+data['message']+"</p></div></div></div></div>"
-};
+  return "<div class='card message'><div class='card-block'><div class='row'><div class='col-md-1'></div><div class='col-md-11'><p class='card-text'><span class='text-muted'>"+data.user+" says</span><br>"+data.message+"</p></div></div></div></div>";
+}
