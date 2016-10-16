@@ -4,7 +4,7 @@ function switchChat(newId) {
   subscribe(newId);
 };
 
-function reconnect() {
+function reconnect(id) {
   event.preventDefault();
-  switchChat(event.target.value);
+  switchChat(id);
 };
