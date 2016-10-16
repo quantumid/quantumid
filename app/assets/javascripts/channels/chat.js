@@ -27,7 +27,7 @@ $(document).on('keypress', '[data-behavior~=chat_speaker]', function(event) {
     event.target.value = "";
     return event.preventDefault();
   }
-})
+});
 
 function initialChat() {
   var chatId = document.getElementById('chat-input').getAttribute('data-chat-id');
