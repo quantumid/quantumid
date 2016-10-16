@@ -1,13 +1,9 @@
 class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
-  def perform(message)
-    ActionCable.server.broadcast 'chat_channel', message: render_message(message)
-  end
-
-  private
-
-  def render_message(message)
-    ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
+  def perform(data)
+    ActionCable.server.broadcast "chat_#{data['chat_id']}_channel",
+                                 message: data['content'], chat_id: data['chat_id'],
+                                 user: User.find(data['user_id']).name
   end
 end

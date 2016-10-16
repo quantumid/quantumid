@@ -16,3 +16,14 @@
 //= require_tree .
 //= require vimeo-player-js
 //= require ./channels/chat
+
+function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
+
+beginPlayer();
+ready(initialChat);

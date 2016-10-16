@@ -21,70 +21,27 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
 
-    <div class="ui fixed menu">
+    <div class="ui borderless fixed menu">
     <div class="ui container">
-      <a href="#" class="header item">
-        Quantum ID
-      </a>
+      <%= link_to 'Quantum ID', root_path, class: 'header item' %>
+
       <% if !user_signed_in? %>
-        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class: 'header item' %>
+        <%= link_to "Sign In", new_user_session_path, class: 'header item' %>
       <% else %>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'header item' %>
       <% end %>
-      <a href="#" class="item">Home</a>
-      <div class="ui simple dropdown item">
-        About <i class="dropdown icon"></i>
-        <div class="menu">
-          <a class="item" href="#">Link Item</a>
-          <a class="item" href="#">Link Item</a>
-          <div class="divider"></div>
-          <div class="header">Header Item</div>
-          <div class="item">
-            <i class="dropdown icon"></i>
-            Sub Menu
-            <div class="menu">
-              <a class="item" href="#">Link Item</a>
-              <a class="item" href="#">Link Item</a>
-            </div>
-          </div>
-          <a class="item" href="#">Link Item</a>
-        </div>
-      </div>
     </div>
   </div>
 
   <div class="ui main text container">
-    <h1 class="ui header">Semantic UI Fixed Template</h1>
     <%= yield %>
   </div>
 
   <div class="ui inverted vertical footer segment">
     <div class="ui center aligned container">
       <div class="ui stackable inverted divided grid">
-        <div class="three wide column">
-          <h4 class="ui inverted header">Group 1</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Link One</a>
-            <a href="#" class="item">Link Two</a>
-            <a href="#" class="item">Link Three</a>
-            <a href="#" class="item">Link Four</a>
-          </div>
-        </div>
-        <div class="three wide column">
-          <h4 class="ui inverted header">Group 2</h4>
-          <div class="ui inverted link list">
-            <a href="#" class="item">Link One</a>
-            <a href="#" class="item">Link Two</a>
-            <a href="#" class="item">Link Three</a>
-            <a href="#" class="item">Link Four</a>
-          </div>
-        </div>
-        <div class="three wide column">
-          <%= render 'chats/chatroom' %>
-        </div>
-        <div class="seven wide column">
-          <h4 class="ui inverted header">Footer Header</h4>
-          <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+        <div class="fourteen wide column">
+          <%= render 'chats/chatroom' if @primary_chat %>
         </div>
       </div>
       <div class="ui inverted section divider"></div>

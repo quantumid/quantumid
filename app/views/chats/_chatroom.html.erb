@@ -1,12 +1,21 @@
-<h1>Chat room</h1>
+<div class='chat-room' >
+  <h5 id='chat-topic'> </h5>
 
-<div id="messages">
-  
+  <div id="messages">
+
+  </div>
 </div>
 
 <% if current_user %>
   <form>
-    <label>Say something:</label><br>
-    <input type="text" data-behavior="chat_speaker">
+    <div class="ui icon input">
+      <input placeholder='Chat...' id='chat-input' type="text" data-behavior="chat_speaker" data-chat-id = <%= @primary_chat.id %>>
+      <i class="talk outline icon"></i>
+    </div>
+    <div class="ui icon buttons">
+      <button class="ui button" onClick='reconnect(1)'><i class='hand rock icon'></i></button>
+      <button class="ui button" onClick='reconnect(2)'><i class='hand paper icon'></i></button>
+      <button class="ui button" onClick='reconnect(3)'><i class ='hand scissors icon'></i></button>
+    </div>
   </form>
 <% end %>
