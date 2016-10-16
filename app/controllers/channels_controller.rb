@@ -7,5 +7,7 @@ class ChannelsController < ApplicationController
     if first_channel
       @initial_video_id = first_channel.videos.first.vimeo_id
     end
+
+    @primary_chat = Chat.find(1)
   end
 end
