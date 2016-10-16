@@ -14,3 +14,7 @@ if Video.where(name: 'Nickelodeon\'s Doug (opening credits)').blank?
   cid = Channel.where(vimeo_id: 112_930_1).first.id
   Video.create!(vimeo_id: 150_707_411, name: 'Nickelodeon\'s Doug (opening credits)', channel_id: cid)
 end
+
+Chat.create!(name: 'Chat One', topic: 'Are Koalas Bears?')
+Chat.create!(name: 'Chat Two', topic: 'Harambe\'s Funeral Planning')
+Chat.create!(name: 'Chat Three', topic: 'Irregular Plurals')
