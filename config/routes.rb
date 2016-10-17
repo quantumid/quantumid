@@ -6,10 +6,13 @@ Rails.application.routes.draw do
     resources :videos, only: [:show]
   end
 
-  resources :admin, only: [:index, :show]
+  namespace :admin do
+    resources :channels
+    get '', to: 'dashboard#index', as: '/'
+  end
 
   resources :chats, only: [:index, :show]
 
-  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks'},
+  devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' },
                      :path_names => { sign_out: 'devise/sessions#destroy' }
 end
