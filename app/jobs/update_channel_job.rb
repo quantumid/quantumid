@@ -1,12 +1,12 @@
 class UpdateChannelJob < ApplicationJob
   queue_as :default
 
-  def perform
+  def perform(id)
+    v = vimeo_channel(id)
+    s = server_channel(id)
 
   end
 
   private
 
-  def pull
-  end
 end
