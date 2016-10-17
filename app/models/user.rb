@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  attr_encrypted :token, key: ENV['ENCRYPTION_KEY']
+  after_create_commit { GenerateNewTokenJob.perform_later self }
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
