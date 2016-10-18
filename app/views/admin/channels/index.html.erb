@@ -1,1 +1,20 @@
+<h2 class="ui header">
+  <i class="film icon"></i>
+  <div class="content">Channels
+  <div class="sub header">Click to Update</div>
+  </div>
+</h2>
 
+<div class="ui middle selection relaxed aligned divided list">
+  <% @channels.each do |c| %>
+  <div class="item">
+    <div class="content">
+      <%= link_to c.name, edit_admin_channel_path(c) %>
+      <div class="description"><%= c.description %></div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<button class="ui primary button">Update All Channels</button>

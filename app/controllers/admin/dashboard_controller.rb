@@ -5,10 +5,4 @@ class Admin::DashboardController < ApplicationController
     @channels = Channel.all
   end
 
-  def update
-  end
-
-  def edit
-  end
-
 end

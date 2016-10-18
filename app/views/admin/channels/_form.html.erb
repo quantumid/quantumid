@@ -1,0 +1,28 @@
+<% @channels.each do |c| %>
+    <div class="ui basic modal" id="modal-<%= c.id %>">
+      <div class="header"> <%= c.name %></div>
+      <div class="ui inverted fluid form two wide">
+        <%= form_for c, url: { controller: 'admin/channels', action: 'update', id: c.id } do |f| %>
+        <div class="field">
+          <%= f.label :vimeo_id, "Vimeo Channel ID" %>
+          <div class="field inline">
+          <%= f.text_field :vimeo_id %>
+          <div class="ui left pointing label">
+            Changing the Vimeo ID will replace all videos in the channel!
+          </div>
+        </div>
+        </div>
+        <div class="field four wide">
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :description %>
+          <%= f.text_field :description, rows: 'three' %>
+        </div>
+        <%= f.submit 'Update', class: 'ui button primary' %>
+      </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

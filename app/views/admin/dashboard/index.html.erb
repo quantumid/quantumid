@@ -1,2 +1,19 @@
-<br />
+<h2 class="ui header">
+  <i class="film icon"></i>
+  <div class="content">Channels
+  <div class="sub header">Click to update. To add a channel, create one through Vimeo. </div>
+  </div>
+</h2>
+
+<%= render partial: 'admin/channels/list', locals: { channels: @channels } %>
+
 <button class="ui primary button">Update All Channels</button>
+
+<%= render partial: 'admin/channels/form', locals: { channels: @channels } %>
+
+<%= javascript_tag do %>
+  function openModal(cId) {
+    var id = '#modal-' + cId;
+    $(id).modal('show');
+  }
+<% end %>
