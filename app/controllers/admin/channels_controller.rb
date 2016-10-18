@@ -1,5 +1,4 @@
 class Admin::ChannelsController < ChannelsController
-
   def update
     @channel = Channel.find(params[:id])
 

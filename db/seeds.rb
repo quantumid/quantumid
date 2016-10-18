@@ -12,7 +12,7 @@ end
 
 if Video.where(name: 'Nickelodeon\'s Doug (opening credits)').blank?
   cid = Channel.where(name: 'Super Fun Sample Test Channel').first.id
-  Video.create!( name: 'Nickelodeon\'s Doug (opening credits)', channel_id: cid)
+  Video.create!(name: 'Nickelodeon\'s Doug (opening credits)', channel_id: cid)
 end
 
 Chat.create!(name: 'Chat One', topic: 'Are Koalas Bears?')
