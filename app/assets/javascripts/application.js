@@ -23,6 +23,4 @@ function ready(fn) {
     document.addEventListener('DOMContentLoaded', fn);
   }
 }
-
-beginPlayer();
 ready(initialChat);
