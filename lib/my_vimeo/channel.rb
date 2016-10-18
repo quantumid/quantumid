@@ -17,6 +17,5 @@ module MyVimeo
       response = self.class.get(path + "/videos", headers: header)
       JSON.parse(response)
     end
-
   end
 end

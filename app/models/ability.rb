@@ -9,6 +9,5 @@ class Ability
         can :manage, Message
         can :manage, User
       end
-
   end
 end
