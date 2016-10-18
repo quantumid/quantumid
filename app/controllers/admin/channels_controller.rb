@@ -1,5 +1,4 @@
 class Admin::ChannelsController < ChannelsController
-  
   def update
     @channel = Channel.find(params[:id])
 
@@ -14,7 +13,7 @@ class Admin::ChannelsController < ChannelsController
   protected
 
   def new_channel_params
-    params.require(:channel).permit(:name, :description, :vimeo_id)
+    params.require(:channel).permit(:name, :description)
   end
 
 end
