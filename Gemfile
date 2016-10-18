@@ -15,6 +15,7 @@ gem 'httparty'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'cancan'
+gem 'zencoder'
 
 group :development, :test do
   gem 'pry-rails'
