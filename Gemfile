@@ -15,7 +15,6 @@ gem 'httparty'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'cancan'
-gem 'attr_encrypted'
 
 group :development, :test do
   gem 'pry-rails'

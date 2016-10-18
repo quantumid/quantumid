@@ -9,9 +9,4 @@ class Channel < ApplicationRecord
     videos.length
   end
 
-  def video_ids
-    a = []
-    videos.each { |v| a << v.vimeo_id }
-    a
-  end
 end
