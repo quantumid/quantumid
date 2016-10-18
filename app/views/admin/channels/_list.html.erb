@@ -1,0 +1,10 @@
+<div class="ui middle selection relaxed aligned divided list">
+  <% @channels.each do |c| %>
+  <div onClick="openModal(<%= c.id %>)" class="item">
+    <div class="content">
+      <a><%= c.name %></a>
+      <div class="description"><%= c.description %></div>
+    </div>
+  </div>
+  <% end %>
+</div>

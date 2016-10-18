@@ -6,6 +6,11 @@ Rails.application.routes.draw do
     resources :videos, only: [:show]
   end
 
+  namespace :admin do
+    resources :channels
+    get '', to: 'dashboard#index', as: '/'
+  end
+
   resources :chats, only: [:index, :show]
 
   devise_for :users, :controllers => { omniauth_callbacks: 'users/omniauth_callbacks' },

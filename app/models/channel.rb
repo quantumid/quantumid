@@ -4,4 +4,9 @@ class Channel < ApplicationRecord
   validates :vimeo_id, presence: true
 
   has_many :videos
+
+  def video_count
+    videos.length
+  end
+
 end

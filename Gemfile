@@ -14,6 +14,7 @@ gem 'dotenv-rails'
 gem 'httparty'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'cancan'
 
 group :development, :test do
   gem 'pry-rails'

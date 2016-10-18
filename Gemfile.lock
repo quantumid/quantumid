@@ -42,6 +42,7 @@ GEM
     arel (7.1.2)
     bcrypt (3.1.11)
     builder (3.2.2)
+    cancan (1.6.10)
     capybara (2.9.0)
       addressable
       mime-types (>= 1.16)
@@ -253,6 +254,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  cancan
   capybara
   coffee-rails (~> 4.2)
   coveralls

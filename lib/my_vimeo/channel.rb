@@ -8,12 +8,13 @@ module MyVimeo
       ActiveRecord::Channel
     end
 
-    def video_count
-      videos['data'].length
+    def channel_info
+      response = self.class.get(path, headers: header)
+      JSON.parse(response)
     end
 
     def videos
-      response = self.class.get(path + "/videos")
+      response = self.class.get(path + "/videos", headers: header)
       JSON.parse(response)
     end
   end

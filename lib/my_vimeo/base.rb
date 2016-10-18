@@ -4,33 +4,19 @@ module MyVimeo
     include HTTParty
     base_uri 'https://api.vimeo.com'
 
-    def initialize(id)
+    def initialize(id, token)
       @id = id
-      @token = new_token
-      @name = name
-      @description = description
+      @token = token
     end
 
     def persisted?
-      result = model_type.where(vimeo_id: @id).blank?
-      !result
+      !model_type.where(vimeo_id: @id).blank?
     end
 
     protected
-    def name
-      full['name']
-    end
 
-    def description
-      full['description']
-    end
-
-    def header
-      {"Authorization" => "Bearer #{@token}" }
-    end
-
-    def new_token
-      MyVimeo::Session.token
+    def token_header
+      { "Authorization" => "Bearer #{@token}" }
     end
 
     def path
@@ -38,7 +24,7 @@ module MyVimeo
     end
 
     def full
-      response = self.class.get(path, headers: header)
+      response = self.class.get(path, headers: token_header)
       JSON.parse(response)
     end
   end

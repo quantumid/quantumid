@@ -9,8 +9,6 @@ module MyVimeo
 
     #this will need to be changed once we establish sessions because class methods cannot be private!
 
-    private
-
     def self.response
       self.post('/client', headers: self.header, body: self.body)
     end

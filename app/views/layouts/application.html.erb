@@ -30,10 +30,15 @@
       <% else %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'header item' %>
       <% end %>
+      <% if current_user.admin? %>
+        <%= link_to "Admin", admin_path, class: 'header item' %>
+      <% end %>
     </div>
   </div>
 
   <div class="ui main text container">
+    <br />
+    <br />
     <%= yield %>
   </div>
 
