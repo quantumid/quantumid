@@ -1,3 +1,23 @@
-// Place all the styles related to the Channels controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$grey: #1b1c1d;
+$light-grey: #969696;
+$blue: #36a2ae;
+$green: #5da34c;
+$red: #c6413d;
+
+.tv-container {
+  background-size:cover;
+  &:before {
+    content: '';
+  	position: absolute;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	opacity: 1;
+    background: $grey; /* IE */
+    background: -webkit-radial-gradient(circle, rgba(255,0,0,0), $grey); /* Safari */
+    background: -o-radial-gradient(circle, rgba(255,0,0,0), $grey); /* Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(circle, rgba(255,0,0,0), $grey); /* Firefox 3.6 to 15 */
+    background: radial-gradient(circle, rgba(255,0,0,0), $grey); /* Standard syntax */
+  }
+}
